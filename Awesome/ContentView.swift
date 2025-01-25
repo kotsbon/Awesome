@@ -8,25 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = "I Am A Programmer!"
+    @State private var message = ""
+    @State private var imageName = ""
+    
     var body: some View {
         
         VStack {
             
-            Image(systemName: "swift")
+            Spacer()
+            
+            Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(.orange)
             
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.heavy )
-                .foregroundStyle(.red)
+                .fontWeight(.ultraLight)
                 .padding()
-
-            Button("Click Me!") {
-                message = "Awesome"
+            
+            Spacer()
+            
+            Button("Press Me!") {
+                if imageName == "" {
+                    imageName = "hand.thumbsup"
+                    message = "You Are Awesome!"
+                } else if imageName == "hand.thumbsup" {
+                    imageName = "sun.max.fill"
+                    message = "You Are Great!"
+                } else if imageName == "sun.max.fill" {
+                    imageName = "hand.thumbsup"
+                    message = "You Are Awesome!"
+                }
+              
             }
+            .buttonStyle(.borderedProminent)
+            .font(.title2)
+            .tint(.orange)
         }
         .padding()
         
