@@ -30,17 +30,18 @@ struct ContentView: View {
             Spacer()
             
             Button("Press Me!") {
-                if imageName == "" {
-                    imageName = "hand.thumbsup"
-                    message = "You Are Awesome!"
-                } else if imageName == "hand.thumbsup" {
-                    imageName = "sun.max.fill"
-                    message = "You Are Great!"
-                } else if imageName == "sun.max.fill" {
-                    imageName = "hand.thumbsup"
-                    message = "You Are Awesome!"
+                let message1 = "You Are Great!"
+                let message2 = "You Are Awesome!"
+                let imageName1 = "sun.max.fill"
+                let imageName2 = "hand.thumbsup"
+                
+                if message == message1 {
+                    message = message2
+                    imageName = imageName1
+                } else {
+                    message = message1
+                    imageName = imageName2
                 }
-              
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
