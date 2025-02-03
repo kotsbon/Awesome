@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    //    @State private var message = ""
+    @State private var message = ""
     @State private var imageName = ""
+    @State private var imageNumber = 0
     
     var body: some View {
         
@@ -23,19 +24,20 @@ struct ContentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .shadow(radius: 30)
             
-            //            Text(message)
-            //                .font(.largeTitle)
-            //                .fontWeight(.heavy)
-            //                .foregroundStyle(.red)
+            Text(message)
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
             
             Spacer()
             
-            Button("Press Me!") {
-                let imageName1 = "image0"
-                let imageName2 = "image1"
+            Button("Show Message") {
+                imageName = "image\(imageNumber)"
+                imageNumber += 1
                 
-                //                message = message == message1 ? message2 : message1
-                imageName = imageName == imageName1 ? imageName2 : imageName1
+                if imageNumber > 9 {
+                    imageNumber = 0
+                }
                 
             }
             .buttonStyle(.borderedProminent)
