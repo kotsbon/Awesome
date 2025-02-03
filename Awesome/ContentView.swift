@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var message = ""
+    //    @State private var message = ""
     @State private var imageName = ""
     
     var body: some View {
@@ -17,38 +17,29 @@ struct ContentView: View {
             
             Spacer()
             
-            Image(systemName: imageName)
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
-                .foregroundStyle(.orange)
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+                .shadow(radius: 30)
             
-            Text(message)
-                .font(.largeTitle)
-                .fontWeight(.ultraLight)
-                .padding()
+            //            Text(message)
+            //                .font(.largeTitle)
+            //                .fontWeight(.heavy)
+            //                .foregroundStyle(.red)
             
             Spacer()
             
             Button("Press Me!") {
-                let message1 = "You Are Great!"
-                let message2 = "You Are Awesome!"
-                let imageName1 = "sun.max.fill"
-                let imageName2 = "hand.thumbsup"
-               
-                message = (message == message1) ? message2 : message1
-                imageName = (imageName == imageName1) ? imageName2 : imageName1
+                let imageName1 = "image0"
+                let imageName2 = "image1"
                 
-//                if message == message1 {
-//                    message = message2
-//                    imageName = imageName1
-//                } else {
-//                    message = message1
-//                    imageName = imageName2
-//                }
+                //                message = message == message1 ? message2 : message1
+                imageName = imageName == imageName1 ? imageName2 : imageName1
+                
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
-            .tint(.orange)
         }
         .padding()
         
