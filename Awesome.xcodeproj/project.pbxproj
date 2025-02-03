@@ -10,22 +10,9 @@
 		13BB13662D422FED00B3BB3E /* Awesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		13DBD76D2D4F909000C19241 /* Exceptions for "Awesome" folder in "Awesome" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Untitled.swift,
-			);
-			target = 13BB13652D422FED00B3BB3E /* Awesome */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		13BB13682D422FED00B3BB3E /* Awesome */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				13DBD76D2D4F909000C19241 /* Exceptions for "Awesome" folder in "Awesome" target */,
-			);
 			path = Awesome;
 			sourceTree = "<group>";
 		};
