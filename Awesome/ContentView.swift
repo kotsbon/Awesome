@@ -3,7 +3,6 @@
 //  Awesome
 //
 //  Created by James Worladge on 23/1/2025.
-//  Morphed into Button If Else challenge
 
 import SwiftUI
 
@@ -11,6 +10,9 @@ struct ContentView: View {
     @State private var message = ""
     @State private var imageName = ""
     @State private var imageNumber = 0
+    
+    var messages = ["Go Stephy!", "You're Hair is Amazing!", "You Will Kick Arsenal's Ass!", "You're a Legend!"]
+    @State private var messagesCount = 0
     
     var body: some View {
         
@@ -28,12 +30,20 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
             
             Spacer()
             
             Button("Show Message") {
                 imageName = "image\(imageNumber)"
                 imageNumber += 1
+                
+                message = messages[messagesCount]
+                messagesCount += 1
+                
+                if messagesCount >= messages.count {
+                    messagesCount = 0
+                }
                 
                 if imageNumber > 9 {
                     imageNumber = 0
