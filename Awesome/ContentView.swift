@@ -14,7 +14,6 @@ struct ContentView: View {
     
     var messages = ["Go Stephy!", "You're Hair is Amazing!", "You Will Kick Arsenal's Ass!", "You're a Legend!", "Today is Your Day!", "Hooray!", "You're Amazing!", "You're a Star!"]
     
-    
     var body: some View {
         
         VStack {
@@ -35,8 +34,6 @@ struct ContentView: View {
                 .shadow(radius: 30)
                 .animation(.default, value: imageName)
             
-            
-            
             Spacer()
             
             Button("Show Message") {
@@ -44,21 +41,6 @@ struct ContentView: View {
                 imageName = "image\(Int.random(in: 0...9))"
                 
                 message = messages[Int.random(in: 0..<messages.count)]
-                
-                //                imageName = "image\(imageNumber)"
-                //                imageNumber += 1
-                //
-                //                message = messages[messagesCount]
-                //                messagesCount += 1
-                
-                //                if messagesCount >= messages.count {
-                //                    messagesCount = 0
-                //                }
-                //
-                //                if imageNumber > 9 {
-                //                    imageNumber = 0
-                //                }
-                
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
