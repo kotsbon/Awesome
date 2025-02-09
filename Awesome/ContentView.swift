@@ -3,49 +3,65 @@
 //  Awesome
 //
 //  Created by James Worladge on 23/1/2025.
-//  Morphed into Button If Else challenge
 
 import SwiftUI
 
 struct ContentView: View {
     @State private var message = ""
     @State private var imageName = ""
+    @State private var imageNumber = 0
+    @State private var messagesCount = 0
+    
+    var messages = ["Go Stephy!", "You're Hair is Amazing!", "You Will Kick Arsenal's Ass!", "You're a Legend!", "Today is Your Day!", "Hooray!", "You're Amazing!", "You're a Star!"]
+    
     
     var body: some View {
         
         VStack {
             
-            Spacer()
-            
-            Image(systemName: imageName)
-                .resizable()
-                .scaledToFit()
-                .foregroundStyle(.orange)
-            
             Text(message)
                 .font(.largeTitle)
-                .fontWeight(.ultraLight)
-                .padding()
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.5)
+                .frame(height: 100)
+                .animation(.easeIn(duration: 0.15), value: message)
+            
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 30))
+                .shadow(radius: 30)
+                .animation(.default, value: imageName)
+            
+            
             
             Spacer()
             
-            Button("Press Me!") {
-                let message1 = "You Are Great!"
-                let message2 = "You Are Awesome!"
-                let imageName1 = "sun.max.fill"
-                let imageName2 = "hand.thumbsup"
+            Button("Show Message") {
                 
-                if message == message1 {
-                    message = message2
-                    imageName = imageName1
-                } else {
-                    message = message1
-                    imageName = imageName2
-                }
+                imageName = "image\(Int.random(in: 0...9))"
+                
+                message = messages[Int.random(in: 0..<messages.count)]
+                
+                //                imageName = "image\(imageNumber)"
+                //                imageNumber += 1
+                //
+                //                message = messages[messagesCount]
+                //                messagesCount += 1
+                
+                //                if messagesCount >= messages.count {
+                //                    messagesCount = 0
+                //                }
+                //
+                //                if imageNumber > 9 {
+                //                    imageNumber = 0
+                //                }
+                
             }
             .buttonStyle(.borderedProminent)
             .font(.title2)
-            .tint(.orange)
         }
         .padding()
         
