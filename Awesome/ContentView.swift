@@ -11,6 +11,8 @@ struct ContentView: View {
     @State private var imageName = ""
     @State private var imageNumber = 0
     @State private var messagesCount = 0
+    @State private var lastImageNumber = 0
+    @State private var lastMessageNumber = 0
     
     var messages = ["Go Stephy!", "You're Hair is Amazing!", "You Will Kick Arsenal's Ass!", "You're a Legend!", "Today is Your Day!", "Hooray!", "You're Amazing!", "You're a Star!"]
     
